@@ -1,6 +1,5 @@
 #!/bin/bash
-#Twitter tweeter by http://360percents.com
-#v1.1 on May 12th 2011
+#Twitter status update bot by http://360percents.com
 #Author: Luka Pusic <pusic93@gmail.com>
 
 #REQUIRED PARAMS
@@ -13,7 +12,7 @@ uagent="Mozilla/5.0" #user agent (fake a browser)
 sleeptime=0 #add pause between requests
 
 if [ $(echo "${tweet}" | wc -c) -gt 140 ]; then
-	echo "[FAIL] Tweet is over 140 chars!" && exit 1
+	echo "[FAIL] Tweet must not be longer than 140 chars!" && exit 1
 fi
 
 touch "cookie.txt" #create a temp. cookie file
