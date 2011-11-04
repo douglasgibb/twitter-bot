@@ -14,7 +14,7 @@ Supports multiple pages.
 * curl
 
 == Instructions ==
-* apply executable permissions (chmod +x ./tweet.sh)
+* apply executable permissions (```chmod +x ./tweet.sh```)
 * usage: ./tweet.sh "Status"
 
 == Changelog ==
