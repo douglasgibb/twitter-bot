@@ -15,6 +15,10 @@ if [ $(echo "${tweet}" | wc -c) -gt 140 ]; then
 	echo "[FAIL] Tweet must not be longer than 140 chars!" && exit 1
 fi
 
+if [ "$tweet" == "" ]; then
+echo "[FAIL] Nothing to tweet. Enter your text as argument." && exit 1
+fi
+
 touch "cookie.txt" #create a temp. cookie file
 
 #INITIAL PAGE

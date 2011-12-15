@@ -1,6 +1,6 @@
 # CLI Twitter status update bot
 
-* Readme date: Nov 27 2011
+* Readme edit date: Dec 15 2011
 * Contributors: lukapusic
 * URI: http://360percents.com/posts/command-line-twitter-status-update-for-linux-and-mac/
 * Github: https://github.com/lukapusic/twitter-bot
@@ -14,11 +14,13 @@ Supports multiple pages.
 * curl
 
 ## Instructions
-1. apply executable permissions (chmod +x ./tweet.sh)
+1. apply executable permissions ```chmod +x ./tweet.sh```
 2. usage: ```./tweet.sh "Status"```
 
 ## Changelog
-*
+
+#### 15.12.2011
+* The script now throws an error if there is no tweet text provided.
 
 ## Known issues
 *
