@@ -37,7 +37,7 @@ homepage=`curl -s -b "cookie.txt" -c "cookie.txt" -L -A "$uagent" "http://mobile
 #TWEET
 echo "[+] Posting a new tweet..." && sleep $sleeptime
 tweettoken=`echo "$homepage" | grep "authenticity_token" | sed -e 's/.*value="//' | sed -e 's/" \/>.*//' | tail -n 1`
-update=`curl -s -b "cookie.txt" -c "cookie.txt" -L -A "$uagent" -d "authenticity_token=$tweettoken&tweet[text]=$tweet&tweet[display_coordinates]=false" "http://mobile.twitter.com/"`
+update=`curl -s -b "cookie.txt" -c "cookie.txt" -L --sslv3 -A "$uagent" -d "authenticity_token=$tweettoken&tweet[text]=$tweet&tweet[display_coordinates]=false" "https://mobile.twitter.com/"`
 
 #LOGOUT
 echo "[+] Logging out..."
