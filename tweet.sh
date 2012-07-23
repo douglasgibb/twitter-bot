@@ -11,8 +11,9 @@ tweet="$*" #must be less than 140 chars
 uagent="Mozilla/5.0" #user agent (fake a browser)
 sleeptime=0 #add pause between requests
 
-if [ $(echo "${tweet}" | wc -c) -gt 140 ]; then
-	echo "[FAIL] Tweet must not be longer than 140 chars!" && exit 1
+if (( ${#tweet} > 140 ))
+then
+	printf "%s\n" "[FAIL] Tweet must not be longer than 140 chars!" && exit 1
 fi
 
 if [ "$tweet" == "" ]; then
