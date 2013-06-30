@@ -2,7 +2,7 @@
 #Twitter status update bot by http://360percents.com
 #Author: Luka Pusic <pusic93@gmail.com>
 
-#REQUIRED PARAMS
+#REQUIRED PARAMS.
 username="your@email.com"
 password="yourpassw0rd"
 tweet="$*" #must be less than 140 chars
