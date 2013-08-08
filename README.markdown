@@ -23,7 +23,7 @@ Supports multiple pages.
 * The script now throws an error if there is no tweet text provided.
 
 ## Known issues
-*
+**
 
 ## License
  ----------------------------------------------------------------------------
