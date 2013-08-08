@@ -11,12 +11,37 @@ tweet="$*" #must be less than 140 chars
 uagent="Mozilla/5.0" #user agent (fake a browser)
 sleeptime=0 #add pause between requests
 
-if [ $(echo "${tweet}" | wc -c) -gt 140 ]; then
-	echo "[FAIL] Tweet must not be longer than 140 chars!" && exit 1
+# Usage information
+optstring=h
+
+usage ()
+{
+   printf "%s\n" " Usage: ./tweet.sh [-h help] " \
+                 " Usage: ./tweet.sh \"status update\"" \
+                 " -h ... usage information. You are reading it." \
+                 " Type ./tweet.sh follwed by your status update. Your tweet must not be longer than 140 chars!"
+}
+
+while getopts $optstring opt
+do
+   case $opt in
+      h) usage; exit 0 ;;
+      *) usage ; exit 1 ;;
+   esac
+done
+
+shift "$(( $OPTIND -1 ))"
+
+if (( ${#tweet} > 140 ))
+then
+   printf "%s\n" " [FAIL] Tweet must not be longer than 140 chars!"
+   usage && exit 1
 fi
 
-if [ "$tweet" == "" ]; then
-echo "[FAIL] Nothing to tweet. Enter your text as argument." && exit 1
+if [[ -z $tweet ]]
+then
+   printf "%s\n" " [FAIL] Nothing to tweet. Enter your text as argument."
+   usage && exit 1
 fi
 
 touch "cookie.txt" #create a temp. cookie file
